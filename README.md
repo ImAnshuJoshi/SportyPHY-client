@@ -50,3 +50,26 @@ To start using Sporty-PHY, you will need to run both the frontend and backend co
    The frontend will be accessible at `http://localhost:3000` by default.
 
 Feel free to explore the Sporty-PHY platform and unleash your passion for sports! 🚀
+
+# NOTE:
+
+### After you are done cloning both client and server, you can add docker-compose.yml file as well in the root directory
+
+```
+version: '3.8'
+services:
+  client:
+    build: ./SportyPHY-client
+    container_name: clientapp_c_c
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
+  server:
+    build: ./SportyPHY-server
+    container_name: serverapp_c_c
+    ports:
+      - "8000:8000"
+    stdin_open: true
+    tty: true
+```
