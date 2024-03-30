@@ -65,6 +65,8 @@ services:
       - "3000:3000"
     stdin_open: true
     tty: true
+    env_file:
+      - ./SportyPHY-client/.env
   server:
     build: ./SportyPHY-server
     container_name: serverapp_c_c
@@ -72,4 +74,6 @@ services:
       - "8000:8000"
     stdin_open: true
     tty: true
+    env_file:
+      - ./SportyPHY-server/.env
 ```
